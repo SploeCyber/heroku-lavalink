@@ -55,7 +55,7 @@ fetch('https://api.github.com/repos/Frederikam/Lavalink/releases/latest')
     .then(res => res.json())
     .then(json => {
         console.log('Found: '+json.assets[0].browser_download_url)
-        download("https://ci.fredboat.com/repository/download/Lavalink_Build/.lastSuccessful/Lavalink.jar", './Lavalink.jar', startLavalink)
+        download(json.assets[0].browser_download_url, './Lavalink.jar', startLavalink)
     });
 
 
